@@ -9,8 +9,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="css/global.css">
-  <link rel="stylesheet" href="css/cotizador.css">
+  <link rel="stylesheet" href="/src/css/global.css">
+  <link rel="stylesheet" href="/src/css/cotizador.css">
 </head>
 <body>
 
@@ -109,6 +109,13 @@
               <label><span>Plazo de entrega (semanas)</span> <span id="weeksLabel">4</span></label>
               <input type="range" id="weeksSlider" min="2" max="16" value="4">
             </div>
+            <div class="slider-group">
+              <label><span>Tecnología de Desarrollo</span></label>
+              <select id="techSelect" style="width: 100%; padding: 0.6rem; border-radius: 6px; background: var(--bg-card, #202430); color: var(--text-main, #ffffff); border: 1px solid var(--border-color, #2d313f); font-family: inherit; font-size: 0.9rem; margin-top: 0.4rem;">
+                <option value="wordpress">No-Code / WordPress (Tarifa Base)</option>
+                <option value="custom">A Medida - React / Node (+50%)</option>
+              </select>
+            </div>
             <div class="preview-total">
               <span>Total estimado</span>
               <span class="preview-total-amount" id="totalFinal">$0</span>
@@ -139,7 +146,7 @@
     </div>
   </footer>
 
-  <script src="js/global.js"></script>
-  <script src="js/cotizador.js"></script>
+  <script type="module" src="/src/ts/global.ts"></script>
+  <script type="module" src="/src/ts/cotizador.ts"></script>
 </body>
 </html>
