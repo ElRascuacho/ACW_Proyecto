@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #1f2937;
+  background: #f3f6fa;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+@layer components {
+  .wire-box {
+    @apply border border-dashed border-wire-line bg-white;
+  }
+
+  .wire-panel {
+    @apply border border-wire-line bg-white;
+  }
+
+  .wire-label {
+    @apply text-xs font-semibold uppercase tracking-normal text-wire-muted;
+  }
+
+  .wire-title {
+    @apply text-2xl font-extrabold text-wire-ink md:text-4xl;
+  }
+
+  .wire-input {
+    @apply h-11 w-full border border-dashed border-wire-line bg-wire-panel px-3 text-sm text-wire-muted;
+  }
+
+  .wire-button {
+    @apply inline-flex h-11 items-center justify-center border border-wire-ink bg-wire-ink px-4 text-sm font-bold text-white;
+  }
+
+  .wire-button-secondary {
+    @apply inline-flex h-11 items-center justify-center border border-wire-line bg-white px-4 text-sm font-bold text-wire-ink;
+  }
+}
