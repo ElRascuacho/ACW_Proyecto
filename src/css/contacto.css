@@ -2,7 +2,7 @@
    CONTACTO & FOOTER
    ============================================================ */
 .contact-page {
-  padding-top: 68px;
+  /* padding en main global */
 }
 #contacto {
   background: var(--surface);

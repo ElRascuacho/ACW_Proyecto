@@ -1,12 +1,12 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import Contacto from './Contacto';
+import ContactoApp from './ContactoApp';
 
 const root = document.getElementById('react-root');
 if (root) {
   createRoot(root).render(
     <StrictMode>
-      <Contacto />
+      <ContactoApp />
     </StrictMode>
   );
 }

@@ -1,0 +1,179 @@
+/* ============================================================
+   MÓDULOS SPA — navegación interna y layout compartido
+   ============================================================ */
+
+main {
+  padding-top: 68px;
+  min-height: calc(100vh - 68px);
+}
+
+/* Las páginas que ya tenían padding-top en main no lo duplican */
+.ticket-page,
+.contact-page,
+.cotizador-page {
+  padding-top: 0;
+}
+
+/* Sub-navegación de cada módulo (React Router / Angular Router) */
+.module-nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 16px 0 8px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.module-nav a {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: color var(--transition), border-color var(--transition), background var(--transition);
+}
+
+.module-nav a:hover {
+  color: #fff;
+  border-color: var(--card-border);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.module-nav a.active,
+.module-nav a.active-page {
+  color: #fff;
+  border-color: rgba(240, 147, 43, 0.35);
+  background: rgba(240, 147, 43, 0.1);
+}
+
+.module-nav .module-nav-meta {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-left: 4px;
+}
+
+.module-nav .module-nav-spacer {
+  flex: 1;
+}
+
+.module-nav .btn-secondary {
+  padding: 8px 16px;
+  font-size: 0.8rem;
+}
+
+/* Botones compactos dentro de tarjetas */
+.btn-sm {
+  padding: 8px 16px !important;
+  font-size: 0.8rem !important;
+  border-radius: 50px;
+}
+
+/* Panel con fondo para listas */
+.panel-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 28px 32px;
+}
+
+.panel-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.panel-card .panel-sub {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+/* Tickets — layout mejorado */
+.ticket-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.ticket-item:last-child {
+  border-bottom: none;
+}
+
+.ticket-item-left {
+  flex: 1;
+  min-width: 0;
+}
+
+.ticket-item-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* Detalle de entidad */
+.detail-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 28px 32px;
+  max-width: 720px;
+}
+
+.detail-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+/* Toolbar sobre listados */
+.list-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: flex-end;
+  margin-bottom: 24px;
+}
+
+.list-toolbar .form-group {
+  margin-bottom: 0;
+  flex: 1;
+  min-width: 220px;
+  max-width: 320px;
+}
+
+/* Angular host */
+app-root {
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .ticket-item {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ticket-item-right {
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .module-nav {
+    gap: 8px;
+  }
+
+  .panel-card {
+    padding: 20px;
+  }
+}

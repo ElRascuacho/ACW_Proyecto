@@ -2,12 +2,12 @@
    HERO  —  Módulo Kevin
    ============================================================ */
 .hero {
-  min-height: 100vh;
+  min-height: calc(100vh - 68px);
   display: flex;
   align-items: center;
   position: relative;
   overflow: hidden;
-  padding-top: 68px;
+  padding-top: 24px;
 }
 .hero::before {
   content: '';
@@ -191,7 +191,7 @@
 }
 
 @media (max-width: 767px) {
-  .hero { min-height: auto; padding: 120px 0 80px; }
+  .hero { min-height: auto; padding: 40px 0 80px; }
   .hero-card-grid { grid-template-columns: 1fr 1fr; }
   .portfolio-grid { grid-template-columns: 1fr; }
   .hero-grid { text-align: center; }

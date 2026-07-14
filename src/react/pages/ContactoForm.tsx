@@ -1,49 +1,58 @@
-import { useState, FormEvent } from 'react';
+import { FormEvent, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import ContactoNav from '../components/ContactoNav';
+import { useConsultas } from '../context/ConsultaContext';
 
-export default function Contacto() {
-  const [name, setName] = useState('');
+export default function ContactoForm() {
+  const { agregarConsulta } = useConsultas();
+  const navigate = useNavigate();
+  const [nombre, setNombre] = useState('');
   const [email, setEmail] = useState('');
-  const [msg, setMsg] = useState('');
+  const [mensaje, setMensaje] = useState('');
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    if (!name.trim() || !email.trim() || !msg.trim()) {
-      alert('Por favor completa todos los campos del formulario.');
+    if (!nombre.trim() || !email.trim() || !mensaje.trim()) {
+      alert('Completa todos los campos.');
       return;
     }
-    alert('Mensaje enviado. Te contactaremos pronto a ' + email.trim());
-    setName('');
-    setEmail('');
-    setMsg('');
+    agregarConsulta({ nombre: nombre.trim(), email: email.trim(), mensaje: mensaje.trim() });
+    alert('Mensaje enviado correctamente.');
+    navigate('/consultas');
   }
 
   return (
     <section className="section-padding" id="contacto">
       <div className="container">
+        <ContactoNav />
+
         <div className="section-header">
           <p className="section-label">Contacto</p>
-          <h2 className="section-title">Hablemos de tu <span className="highlight">proximo proyecto</span></h2>
-          <p className="section-desc">Estamos en Manta, Manabí. Cuentanos tu idea y la hacemos realidad.</p>
+          <h2 className="section-title">
+            Hablemos de tu <span className="highlight">proximo proyecto</span>
+          </h2>
+          <p className="section-desc">Estamos en Manta, Manabi. Cuentanos tu idea y la hacemos realidad.</p>
         </div>
 
         <div className="contact-grid">
           <form className="contact-form" onSubmit={handleSubmit}>
-            <h3><i className="fas fa-envelope contact-form-icon"></i>Envia un mensaje</h3>
+            <h3>
+              <i className="fas fa-envelope contact-form-icon"></i>Envia un mensaje
+            </h3>
             <div className="form-group">
               <label htmlFor="contact-name">Nombre</label>
               <input
-                type="text"
                 id="contact-name"
                 placeholder="Tu nombre"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
+                value={nombre}
+                onChange={(e) => setNombre(e.target.value)}
               />
             </div>
             <div className="form-group">
               <label htmlFor="contact-email">Correo electronico</label>
               <input
-                type="email"
                 id="contact-email"
+                type="email"
                 placeholder="correo@ejemplo.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -54,8 +63,8 @@ export default function Contacto() {
               <textarea
                 id="contact-msg"
                 placeholder="Cuentanos sobre tu proyecto..."
-                value={msg}
-                onChange={(e) => setMsg(e.target.value)}
+                value={mensaje}
+                onChange={(e) => setMensaje(e.target.value)}
               />
             </div>
             <button type="submit" className="btn-primary">
@@ -68,7 +77,7 @@ export default function Contacto() {
               <i className="fas fa-map-marker-alt"></i>
               <div>
                 <h4>Ubicacion</h4>
-                <p>Manta, Manabí, Ecuador</p>
+                <p>Manta, Manabi, Ecuador</p>
               </div>
             </div>
             <div className="contact-info-card">

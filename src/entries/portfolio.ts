@@ -1,2 +1,2 @@
 import '../ts/global.ts';
-import '../angular/portfolio/main.ts';
+import '../angular/main.ts';

@@ -1,2 +1,2 @@
 import '../ts/global.ts';
-import '../angular/cotizador/main.ts';
+import '../angular/main.ts';

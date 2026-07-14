@@ -2,7 +2,7 @@
    SMART COTIZADOR  —  Módulo Integrante 3
    ============================================================ */
 .cotizador-page {
-  padding-top: 68px;
+  /* padding en main global */
 }
 #cotizador {
   background: var(--surface);

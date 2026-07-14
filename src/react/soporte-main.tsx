@@ -1,12 +1,12 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import Soporte from './Soporte';
+import SoporteApp from './SoporteApp';
 
 const root = document.getElementById('react-root');
 if (root) {
   createRoot(root).render(
     <StrictMode>
-      <Soporte />
+      <SoporteApp />
     </StrictMode>
   );
 }
